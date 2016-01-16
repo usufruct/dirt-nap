@@ -12,8 +12,8 @@ config :logger, level: :warn
 # Configure your database
 config :dirt_nap, DirtNap.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "mandible",
+  password: "",
   database: "dirt_nap_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

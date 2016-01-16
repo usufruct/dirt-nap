@@ -8,5 +8,16 @@
     "javascript-brunch": ">= 1.0 < 1.8",
     "redux": "^3.0.5",
     "uglify-js-brunch": ">= 1.0 < 1.8"
+  },
+  "scripts": {
+    "test": "ava"
+  },
+  "ava": {
+    "files": [
+      "test/client_js/*.js"
+    ]
+  },
+  "devDependencies": {
+    "ava": "^0.10.0"
   }
 }

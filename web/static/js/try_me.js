@@ -1,4 +1,5 @@
 import { createStore } from 'redux'
+// import { fetch } from 'node-fetch'
 
 function counter(state = 0, action) {
   switch (action.type) {
@@ -13,6 +14,24 @@ function counter(state = 0, action) {
 
 let run = () => {
   console.log('running');
+  console.log(createStore)
+  console.log(fetch)
+
+  fetch('https://data.cityofchicago.org/resource/energy-usage-2010.json?community_area_name=Woodlawn',
+      {
+        headers: {
+          'X-App-Token': 'jTHI0uCmG4rSLLTawUBvoznNt'
+        }
+      })
+      .then((response) => {
+        return response.json();
+      })
+      .then((json) => {
+        console.log("json", json);
+      });
+
+
+
   let store = createStore(counter);
 
   store.subscribe(() => {

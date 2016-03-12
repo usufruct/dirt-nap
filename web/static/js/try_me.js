@@ -1,5 +1,8 @@
 import { createStore } from 'redux'
+import reducer from './reducers/index'
 // import { fetch } from 'node-fetch'
+
+console.log('reducer', reducer);
 
 function counter(state = 0, action) {
   switch (action.type) {
@@ -13,10 +16,6 @@ function counter(state = 0, action) {
 }
 
 let run = () => {
-  console.log('running');
-  console.log(createStore)
-  console.log(fetch)
-
   fetch('https://data.cityofchicago.org/resource/energy-usage-2010.json?community_area_name=Woodlawn',
       {
         headers: {
@@ -48,7 +47,7 @@ let run = () => {
     type: 'DECREMENT'
   });
 
-  console.log(store);
+  console.log('store', store);
 
   console.log('done running')
 }
